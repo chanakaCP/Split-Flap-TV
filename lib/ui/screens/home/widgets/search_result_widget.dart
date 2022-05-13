@@ -22,6 +22,9 @@ class SearchResultWidget extends StatelessWidget {
               marginBottom: 16,
               child: CustomScriptCardWidget(
                 title: result,
+                onTapItem: () {
+                  Navigator.of(context).pushNamed("/ScriptDetailsScreen");
+                },
               ),
             ),
         ],

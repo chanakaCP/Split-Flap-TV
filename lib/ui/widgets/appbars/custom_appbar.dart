@@ -42,7 +42,6 @@ class CustomAppbar extends StatelessWidget with PreferredSizeWidget {
         padding: padding ??
             const EdgeInsets.only(left: 19, right: 19, bottom: 12, top: 40),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomContainer(

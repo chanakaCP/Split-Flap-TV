@@ -70,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   onTapTailingIcon() {}
 
-  onClickCreateScript() {}
+  onClickCreateScript() {
+    Navigator.of(context).pushNamed("/CreateNewScriptScreen");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,6 +91,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 35,
               ),
       ),
+      bottomSheet: (_isSearching)
+          ? null
+          : CustomContainer(
+              height: 112,
+              padding: const EdgeInsets.fromLTRB(16, 32, 16, 32),
+              bgColor: backgroundColor,
+              child: CustomButton(
+                text: "Create New Scripts",
+                onPressed: () => onClickCreateScript(),
+              ),
+            ),
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         child: CustomContainer(
           child: Column(
@@ -104,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemSize: 24,
                   padding: 16.vertical,
                   prefixInsets: const EdgeInsets.fromLTRB(18, 0, 10, 0),
+                  suffixInsets: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                   placeholderStyle: customFontStyle(
                     fontColor: hintTextColor,
                     fontWeight: FontWeight.w400,
@@ -118,17 +133,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           ListOfDevicesWidget(deviceList: tempDeviceList),
                           ListOfScriptsWidget(scriptList: tempScriptList),
-                          CustomButton(
-                            text: "Create New Scripts",
-                            onPressed: () => onClickCreateScript(),
-                            margin: const EdgeInsets.symmetric(
-                              horizontal: 16,
-                              vertical: 32,
-                            ),
-                          )
                         ],
                       ),
                     ),
+              const SizedBox(height: 150),
             ],
           ),
         ),

@@ -13,7 +13,9 @@ class ListOfDevicesWidget extends StatelessWidget {
     required this.deviceList,
   }) : super(key: key);
 
-  onTapSeeMore() {}
+  onTapSeeMore(BuildContext context) {
+    Navigator.of(context).pushNamed("/AllDevicesScreen");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +34,7 @@ class ListOfDevicesWidget extends StatelessWidget {
                 ),
                 CustomTextButton(
                   text: "See All",
-                  onPressed: () {
-                    onTapSeeMore();
-                  },
+                  onPressed: () => onTapSeeMore(context),
                 )
               ],
             ),
@@ -49,7 +49,12 @@ class ListOfDevicesWidget extends StatelessWidget {
                 for (var device in deviceList)
                   CustomContainer(
                     marginRight: 16,
-                    child: CustomScriptCardWidget(title: device),
+                    child: CustomScriptCardWidget(
+                      title: device,
+                      onTapItem: () {
+                        Navigator.of(context).pushNamed("/ScriptDetailsScreen");
+                      },
+                    ),
                   ),
               ],
             ),

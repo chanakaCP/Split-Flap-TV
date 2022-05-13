@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:split_flap_tv/config/enums/custom_form_field_state.dart';
 import 'package:split_flap_tv/config/enums/enums.dart';
 import 'package:split_flap_tv/config/style/style.dart';
@@ -24,6 +25,7 @@ class CustomFormField extends StatelessWidget {
   final double paddingBottom;
   final double paddingTop;
   final double? height;
+  final double? width;
   final Alignment alignment;
   final List<TextInputFormatter>? textInputFormatter;
   final Function? onChange;
@@ -39,32 +41,33 @@ class CustomFormField extends StatelessWidget {
   final Widget? prefix;
   final Widget? suffix;
 
-  CustomFormField({
+  const CustomFormField({
     Key? key,
     required this.controller,
-    this.readOnly = false,
     this.hintText,
     this.inputType,
+    this.readOnly = false,
+    this.suffixIcon,
     this.maxLength,
     this.regX,
-    this.suffixIcon,
+    this.margin,
     this.marginLeft = 0,
     this.marginRight = 0,
     this.marginBottom = 0,
     this.marginTop = 0,
+    this.padding,
     this.paddingLeft = 0,
     this.paddingRight = 0,
     this.paddingBottom = 0,
     this.paddingTop = 0,
-    this.alignment = Alignment.centerLeft,
-    this.margin,
-    this.padding,
-    this.focusNode,
     this.height = 48,
+    this.width = double.infinity,
+    this.alignment = Alignment.centerLeft,
     this.textInputFormatter,
     this.onChange,
     this.textCapitalization,
     this.obSecureText = false,
+    this.focusNode,
     this.textStyle,
     this.hintStyle,
     this.formTitle,
@@ -94,6 +97,7 @@ class CustomFormField extends StatelessWidget {
             paddingBottom,
           ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           (formTitle != null)
               ? CustomText(
@@ -105,6 +109,7 @@ class CustomFormField extends StatelessWidget {
           Container(
             color: transparent,
             height: height!,
+            width: width!,
             alignment: alignment,
             child: Row(
               children: [
@@ -130,7 +135,7 @@ class CustomFormField extends StatelessWidget {
                           hintStyle ?? fontStyle3(fontColor: hintTextColor),
                       filled: true,
                       fillColor: (fieldState == FormInputFieldState.ERROR)
-                          ? white
+                          ? primaryRedColor.withOpacity(0.5)
                           : primaryBlackColor,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),

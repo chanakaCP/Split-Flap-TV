@@ -13,7 +13,9 @@ class ListOfScriptsWidget extends StatelessWidget {
     required this.scriptList,
   }) : super(key: key);
 
-  onTapSeeMore() {}
+  onTapSeeMore(BuildContext context) {
+    Navigator.of(context).pushNamed("/AllScriptsScreen");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +34,7 @@ class ListOfScriptsWidget extends StatelessWidget {
                 ),
                 CustomTextButton(
                   text: "See All",
-                  onPressed: () {
-                    onTapSeeMore();
-                  },
+                  onPressed: () => onTapSeeMore(context),
                 )
               ],
             ),
@@ -49,7 +49,12 @@ class ListOfScriptsWidget extends StatelessWidget {
                 for (var script in scriptList)
                   CustomContainer(
                     marginRight: 16,
-                    child: CustomScriptCardWidget(title: script),
+                    child: CustomScriptCardWidget(
+                      title: script,
+                      onTapItem: () {
+                        Navigator.of(context).pushNamed("/ScriptDetailsScreen");
+                      },
+                    ),
                   ),
               ],
             ),

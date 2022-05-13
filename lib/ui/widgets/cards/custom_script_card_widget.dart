@@ -8,30 +8,35 @@ import 'package:split_flap_tv/ui/widgets/texts/custom_text.dart';
 
 class CustomScriptCardWidget extends StatelessWidget {
   final String title;
+  final VoidCallback onTapItem;
 
   const CustomScriptCardWidget({
     Key? key,
     required this.title,
+    required this.onTapItem,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return CustomContainer(
-      borderRadius: 16.fullRadius,
-      border: Border.all(color: primaryBlackColor, width: 2),
-      child: Column(
-        children: [
-          const CustomImage(
-            imagePath: tempScript,
-            width: 300,
-            fit: BoxFit.fitWidth,
-          ),
-          CustomText(
-            text: title,
-            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            textStyle: fontStyle8(),
-          ),
-        ],
+    return InkWell(
+      child: CustomContainer(
+        borderRadius: 16.fullRadius,
+        border: Border.all(color: primaryBlackColor, width: 2),
+        child: Column(
+          children: [
+            const CustomImage(
+              imagePath: tempScript,
+              width: 300,
+              fit: BoxFit.fitWidth,
+            ),
+            CustomText(
+              text: title,
+              margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              textStyle: fontStyle8(),
+            ),
+          ],
+        ),
       ),
+      onTap: () => onTapItem(),
     );
   }
 }
