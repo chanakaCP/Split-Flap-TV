@@ -15,7 +15,7 @@ class VerifyOtpScreen extends StatefulWidget {
 
 class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
   onTapVerify() {
-    // Navigator.of(context).pushNamed("/SignInScreen");
+    Navigator.of(context).pushNamed("/HomeScreen");
   }
 
   onChangePin(String value) {}

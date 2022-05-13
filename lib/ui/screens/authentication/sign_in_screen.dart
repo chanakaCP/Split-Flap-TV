@@ -33,7 +33,9 @@ class _SignInScreenState extends State<SignInScreen> {
     Navigator.of(context).pushReplacementNamed('/SignUpScreen');
   }
 
-  onTapLogin() {}
+  onTapLogin() {
+    Navigator.of(context).pushNamed("/HomeScreen");
+  }
 
   @override
   Widget build(BuildContext context) {

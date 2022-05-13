@@ -10,7 +10,7 @@ EdgeInsetsGeometry defaultHorizontalMargin =
     const EdgeInsets.symmetric(horizontal: 16);
 
 TextStyle fontStyle1({Color? fontColor = white}) => TextStyle(
-      fontWeight: FontWeight.w100,
+      fontWeight: FontWeight.w500,
       fontSize: 18.0,
       color: fontColor,
       fontFamily: robotoFont,
@@ -55,6 +55,21 @@ TextStyle fontStyle6({Color? fontColor = primaryBlueColor}) => TextStyle(
       color: fontColor,
       fontFamily: robotoFont,
       height: 28.13 / 24.0,
+    );
+
+TextStyle fontStyle7({Color? fontColor = white}) => TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 18.0,
+      color: fontColor,
+      fontFamily: robotoFont,
+      height: 21.09 / 18.0,
+    );
+TextStyle fontStyle8({Color? fontColor = white}) => TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 16.0,
+      color: fontColor,
+      fontFamily: robotoFont,
+      height: 18.75 / 18.0,
     );
 
 TextStyle customFontStyle(

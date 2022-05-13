@@ -29,7 +29,7 @@ class CustomAppbar extends StatelessWidget with PreferredSizeWidget {
     this.titleColor = white,
     this.leadingCallback,
     this.tailingCallback,
-    this.height = 90,
+    this.height = 88,
     this.titleWidget,
     this.padding,
   }) : super(key: key);
@@ -42,10 +42,14 @@ class CustomAppbar extends StatelessWidget with PreferredSizeWidget {
         padding: padding ??
             const EdgeInsets.only(left: 19, right: 19, bottom: 12, top: 40),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             CustomContainer(
-              alignment: Alignment.centerLeft,
+              height: 35,
+              width: 35,
+              alignment: Alignment.center,
+              padding: 6.all,
               child: InkWell(
                 onTap: () {
                   if (leadingCallback != null) {
@@ -71,17 +75,20 @@ class CustomAppbar extends StatelessWidget with PreferredSizeWidget {
                   ),
             ),
             CustomContainer(
-              alignment: Alignment.centerRight,
+              height: 35,
+              width: 35,
+              alignment: Alignment.center,
+              padding: 6.all,
               child: InkWell(
                 onTap: () {
                   if (tailingCallback != null) tailingCallback!();
                 },
                 child: (tailingIcon != null)
                     ? Icon(
-                        leadingIcon ?? Icons.arrow_back_rounded,
+                        tailingIcon!,
                         color: leadingColor,
                       )
-                    : const SizedBox(width: 24),
+                    : const SizedBox(width: 35),
               ),
             )
           ],

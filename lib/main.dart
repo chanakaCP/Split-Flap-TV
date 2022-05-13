@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'ui/screens/authentication/authentication.dart';
+import 'ui/screens/home/home_screen.dart';
 import 'ui/screens/onboarding/onboarding.dart';
 import 'ui/screens/password_reset/password_reset.dart';
 
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
         "/PasswordResetScreen": (BuildContext c) => PasswordResetScreen(),
         "/PasswordResetSuccessScreen": (BuildContext c) =>
             PasswordResetSuccessScreen(),
+        "/HomeScreen": (BuildContext c) => HomeScreen(),
       },
-      initialRoute: "/SplashScreen",
+      initialRoute: "/HomeScreen",
     );
   }
 }
