@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:split_flap_tv/config/extensions/extensions.dart';
 import 'package:split_flap_tv/config/style/style.dart';
 import 'package:split_flap_tv/ui/widgets/appbars/custom_appbar.dart';
+import 'package:split_flap_tv/ui/widgets/buttons/custom_button.dart';
 import 'package:split_flap_tv/ui/widgets/containers/custom_container.dart';
 import 'package:split_flap_tv/ui/widgets/form_contents/custom_form_field.dart';
 import 'package:split_flap_tv/ui/widgets/texts/custom_text.dart';
+import 'widgets/widgets.dart';
 
 class CreateNewScriptScreen extends StatefulWidget {
   @override
@@ -17,12 +19,21 @@ class _CreateNewScriptScreenState extends State<CreateNewScriptScreen> {
   TextEditingController _scriptRowsController = TextEditingController();
 
   bool _isSilentUpdate = false;
+  int _pageCount = 1;
 
   onTapSilentUpdate() {
     setState(() {
       _isSilentUpdate = !_isSilentUpdate;
     });
   }
+
+  onTapAddNewPage() {
+    setState(() {
+      _pageCount = _pageCount + 1;
+    });
+  }
+
+  onTapSaveScript() {}
 
   @override
   Widget build(BuildContext context) {
@@ -93,6 +104,18 @@ class _CreateNewScriptScreenState extends State<CreateNewScriptScreen> {
                   ],
                 ),
               ),
+              ScriptPageList(pageCount: _pageCount),
+              CustomButton.outline(
+                text: "Add new Page",
+                marginTop: 32,
+                onPressed: () => onTapAddNewPage(),
+              ),
+              CustomButton(
+                text: "Done",
+                marginTop: 15,
+                onPressed: () => onTapSaveScript(),
+              ),
+              const SizedBox(height: 100),
             ],
           ),
         ),

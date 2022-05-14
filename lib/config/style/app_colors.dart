@@ -12,3 +12,4 @@ const pageColor1 = Color(0xFFE86B6B);
 const pageColor2 = Color(0xFF4DC591);
 const gray100 = Color(0xFFEEEEEE);
 const gray200 = Color(0xFFE0E0E0);
+const borderColor = Color(0xFF727272);

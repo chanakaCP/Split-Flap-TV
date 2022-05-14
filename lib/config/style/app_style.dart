@@ -38,7 +38,7 @@ TextStyle fontStyle4({Color? fontColor = white}) => TextStyle(
       fontSize: 22.0,
       color: fontColor,
       fontFamily: robotoFont,
-      height: 25.78 / 14.0,
+      height: 25.78 / 22.0,
     );
 
 TextStyle fontStyle5({Color? fontColor = primaryBlueColor}) => TextStyle(
@@ -70,6 +70,20 @@ TextStyle fontStyle8({Color? fontColor = white}) => TextStyle(
       color: fontColor,
       fontFamily: robotoFont,
       height: 18.75 / 18.0,
+    );
+TextStyle fontStyle9({Color? fontColor = white}) => TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 10.0,
+      color: fontColor,
+      fontFamily: robotoFont,
+      height: 11.72 / 11.72,
+    );
+TextStyle fontStyle10({Color? fontColor = white}) => TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: 10.0,
+      color: fontColor,
+      fontFamily: robotoFont,
+      height: 11.72 / 11.72,
     );
 
 TextStyle customFontStyle(
