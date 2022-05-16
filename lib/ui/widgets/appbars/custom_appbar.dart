@@ -64,14 +64,16 @@ class CustomAppbar extends StatelessWidget with PreferredSizeWidget {
               ),
             ),
             Expanded(
-              child: titleWidget ??
-                  CustomText(
-                    margin: 15.horizontal,
-                    text: title ?? "",
-                    textAlign: TextAlign.center,
-                    containerAlignment: Alignment.center,
-                    textStyle: fontStyle4(),
-                  ),
+              child: Container(
+                child: titleWidget ??
+                    CustomText(
+                      text: title ?? "",
+                      textAlign: TextAlign.center,
+                      containerAlignment: Alignment.center,
+                      textStyle: fontStyle4(),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+              ),
             ),
             CustomContainer(
               height: 35,

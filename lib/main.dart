@@ -33,8 +33,9 @@ class MyApp extends StatelessWidget {
         "/AllDevicesScreen": (BuildContext c) => AllDevicesScreen(),
         "/ScriptDetailsScreen": (BuildContext c) => ScriptDetailsScreen(),
         "/CreateNewScriptScreen": (BuildContext c) => CreateNewScriptScreen(),
+        "/ScriptAllocationScreen": (BuildContext c) => ScriptAllocationScreen(),
       },
-      initialRoute: "/HomeScreen",
+      initialRoute: "/SplashScreen",
     );
   }
 }
