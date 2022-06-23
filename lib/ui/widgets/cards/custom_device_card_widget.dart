@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:split_flap_tv/config/consts/consts.dart';
 import 'package:split_flap_tv/config/extensions/extensions.dart';
 import 'package:split_flap_tv/config/style/style.dart';
-import 'package:split_flap_tv/models/script/script.dart';
+import 'package:split_flap_tv/models/devices/device.dart';
+import 'package:split_flap_tv/ui/widgets/buttons/custom_button.dart';
 import 'package:split_flap_tv/ui/widgets/containers/custom_container.dart';
 import 'package:split_flap_tv/ui/widgets/images/custom_image.dart';
 import 'package:split_flap_tv/ui/widgets/texts/custom_text.dart';
 
-class CustomScriptCardWidget extends StatelessWidget {
-  final Script script;
+class CustomDeviceCardWidget extends StatelessWidget {
+  final Device device;
   final VoidCallback onTapItem;
 
-  const CustomScriptCardWidget({
+  const CustomDeviceCardWidget({
     Key? key,
-    required this.script,
+    required this.device,
     required this.onTapItem,
   }) : super(key: key);
   @override
@@ -32,12 +33,20 @@ class CustomScriptCardWidget extends StatelessWidget {
             const CustomImage(
               imagePath: tempScript,
               width: 300,
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.cover,
             ),
             CustomText(
-              text: script.scriptName!,
+              text: device.displayName!,
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               textStyle: fontStyle8(),
+            ),
+            CustomButton(
+              text: "Calendar View",
+              buttonHeight: 32,
+              marginLeft: 16,
+              marginBottom: 12,
+              buttonWidth: 125,
+              onPressed: () {},
             ),
           ],
         ),

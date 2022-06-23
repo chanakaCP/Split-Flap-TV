@@ -35,13 +35,13 @@ class LandingScreen extends StatelessWidget {
                 Navigator.of(context).pushNamed("/SignInScreen");
               },
             ),
-            CustomButton.outline(
-              text: "Signup",
-              marginTop: 16,
-              onPressed: () {
-                Navigator.of(context).pushNamed("/SignUpScreen");
-              },
-            ),
+            // CustomButton.outline(
+            //   text: "Signup",
+            //   marginTop: 16,
+            //   onPressed: () {
+            //     Navigator.of(context).pushNamed("/SignUpScreen");
+            //   },
+            // ),
           ],
         ),
       ),

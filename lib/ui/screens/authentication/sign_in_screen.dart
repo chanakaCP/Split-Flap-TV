@@ -103,21 +103,21 @@ class _SignInScreenState extends State<SignInScreen> {
                 onTapLogin();
               },
             ),
-            CustomContainer(
-              marginTop: 16,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const CustomText(text: "Haven’t any account?\t\t"),
-                  CustomTextButton(
-                    text: "Signup",
-                    onPressed: () {
-                      onTapSignUp();
-                    },
-                  )
-                ],
-              ),
-            )
+            // CustomContainer(
+            //   marginTop: 16,
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: [
+            //       const CustomText(text: "Haven’t any account?\t\t"),
+            //       CustomTextButton(
+            //         text: "Signup",
+            //         onPressed: () {
+            //           onTapSignUp();
+            //         },
+            //       )
+            //     ],
+            //   ),
+            // )
           ],
         ),
       ),
